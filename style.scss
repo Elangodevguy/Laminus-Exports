@@ -104,6 +104,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: $black_color;
 
     &--icon {
       width: 4rem;
@@ -240,6 +242,20 @@ body {
     }
   }
 }
+
+.strength {
+  background-image: linear-gradient(
+      $black_color,
+      $black_color
+    ),
+    url(./img/strength.jpeg);
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;

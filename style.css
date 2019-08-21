@@ -84,6 +84,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .navbar__brand--icon {
@@ -231,6 +233,16 @@ body {
 
 .about__right p:first-child {
   margin-bottom: 2rem;
+}
+
+.strength {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.87)), to(rgba(0, 0, 0, 0.87))), url(./img/strength.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87)), url(./img/strength.jpeg);
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .container {
