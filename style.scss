@@ -1,0 +1,263 @@
+// import font from google
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap');
+
+// variables
+$black_color: rgba(0, 0, 0, 0.87);
+$white_color: rgb(255, 255, 255);
+$green_color: #63cd2b;
+$brown_color: rgb(245, 54, 7);
+
+$primary_color: rgb(245, 244, 245);
+$default_font_size: 62.5%;
+
+// mixins
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
+
+// clear default values
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// To clear focus
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+}
+
+html {
+  // font-size: 62.5%; //  10/16 => 1rem
+  font-size: $default_font_size;
+  scroll-behavior: smooth; //  For smooth scrolling
+
+  // To include Mixins
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.6;
+  // padding: 3rem;
+}
+.header__container {
+  position: relative;
+  height: 100vh;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: $white_color;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  margin: 0.8rem;
+
+  &__brand {
+    flex: 1;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--icon {
+      width: 4rem;
+    }
+
+    &--primary {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    &--secondary {
+      margin-top: -1.6rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.9rem;
+      font-weight: 300;
+    }
+  }
+  &__list {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--item {
+      text-decoration: none;
+      color: $black_color;
+      font-size: 1.8rem;
+      margin-right: 2rem;
+      color: $black_color;
+      font-weight: 500;
+    }
+  }
+}
+// Header
+.header {
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  //   url(./img/header.jpg);
+  background-image: linear-gradient(
+      rgba($green_color, 0.7),
+      rgba($green_color, 0.7)
+    ),
+    url(./img/header.jpg);
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  height: 88.5%;
+  // width: 100%;
+  margin: 0 2rem;
+}
+
+// Menu animation
+.menu__link {
+  padding-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__link:before,
+.menu__link:after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: $green_color;
+
+  will-change: width;
+  transition: width 0.07s ease-out;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.menu__link:before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu__link:after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.menu__link:hover:before,
+.menu__link:hover:after {
+  width: 100%;
+  transition-duration: 0.45s;
+}
+
+// SECTION ABOUT US
+.about {
+  border-left: 2rem solid $green_color;
+  border-right: 2rem solid $green_color;
+
+  &__section {
+    background-color: $white_color;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+  }
+  &__left {
+    flex: 1;
+
+    &--primary {
+      color: $brown_color;
+      font-size: 2.5rem;
+      font-weight: 400;
+      display: inline-block;
+      margin-bottom: 2rem;
+      transform: rotate(270deg);
+      cursor: pointer;
+    }
+
+    &--secondary {
+      display: inline-block;
+      font-size: 3.7rem;
+      font-weight: 100;
+
+      & span {
+        color: $green_color;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__right {
+    flex: 1;
+
+    & p {
+      font-size: 1.6rem;
+
+      &:first-child {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
