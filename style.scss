@@ -87,20 +87,20 @@ body {
 }
 .header__container {
   position: relative;
-  height: 100vh;
+  height: 89vh;
 }
 .navbar {
   position: sticky;
   top: 0;
+  z-index: 999;
   background-color: $white_color;
   height: 10%;
   display: flex;
   align-items: center;
-  margin: 0.8rem;
+  margin: 1rem;
 
   &__brand {
     flex: 1;
-    // text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,9 +152,8 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 
-  height: 88.5%;
-  // width: 100%;
-  margin: 0 2rem;
+  height: 100%;
+  margin: 0 1rem;
 }
 
 // Menu animation
@@ -196,8 +195,8 @@ body {
 
 // SECTION ABOUT US
 .about {
-  border-left: 2rem solid $green_color;
-  border-right: 2rem solid $green_color;
+  border-left: 1rem solid $green_color;
+  border-right: 1rem solid $green_color;
 
   &__section {
     background-color: $white_color;
@@ -210,23 +209,6 @@ body {
 
     &--primary {
       color: $brown_color;
-      font-size: 2.5rem;
-      font-weight: 400;
-      display: inline-block;
-      margin-bottom: 2rem;
-      transform: rotate(270deg);
-      cursor: pointer;
-    }
-
-    &--secondary {
-      display: inline-block;
-      font-size: 3.7rem;
-      font-weight: 100;
-
-      & span {
-        color: $green_color;
-        font-weight: 500;
-      }
     }
   }
 
@@ -243,18 +225,187 @@ body {
   }
 }
 
-.strength {
-  background-image: linear-gradient(
-      $black_color,
-      $black_color
-    ),
+.facts {
+  margin: 0 1rem;
+  padding: 6rem 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./img/strength.jpeg);
   background-position: top;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 100vh;
+  // height: 80vh;
+
+  &__top {
+    &--primary {
+      color: $brown_color;
+    }
+    &--secondary {
+      color: $white_color;
+    }
+  }
+  &__bottom {
+    color: $white_color;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &--card {
+      text-align: center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+      width: 20%;
+      margin: 4rem 0;
+      padding: 3rem 0;
+
+      & i {
+        font-size: 4rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .card__details {
+        &--num {
+          font-size: 3rem;
+          padding-bottom: 0.5rem;
+        }
+        &--text {
+          font-size: 1.6rem;
+          font-weight: 100;
+        }
+      }
+    }
+  }
 }
+
+.products {
+  margin: 0 1rem;
+  padding: 6rem 0;
+  &__top {
+    &--primary {
+      color: $brown_color;
+    }
+    &--secondary {
+
+    }
+
+  }
+  &__bottom {
+    margin: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+// Sumaaaaaaa
+
+/* generic css */
+
+.view {
+  min-width: 31.333%;
+  border-radius: 1rem;
+  margin: 10px;
+  float: left;
+  border: 1rem solid $green_color;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+  background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+
+.view .mask,
+.view .content {
+  // width: 300px;
+  // height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.view img {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.view h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  font-family: Raleway, serif;
+  padding: 10px;
+  /*background: rgba(0, 0, 0, 0.8);*/
+  margin: 20px 0 0 0;
+}
+
+.view p {
+  font-style: italic;
+  font-size: 14px;
+  position: relative;
+  color: #fff;
+  padding: 0px 20px 0px;
+  text-align: center;
+}
+
+/*3*/
+
+.view-tenth img {
+  transform: scaleY(1);
+  transition: all 0.7s ease-in-out;
+}
+
+.view-tenth .mask {
+  background-color: rgba(255, 231, 179, 0.3);
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
+.view-tenth h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  margin: 20px 40px 0px 40px;
+  transform: scale(0);
+  color: #333;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
+.view-tenth p {
+  color: #333;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s linear;
+}
+
+.view-tenth a.info {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s linear;
+}
+
+.view-tenth:hover img {
+  -webkit-transform: scale(10);
+  transform: scale(10);
+  opacity: 0;
+}
+
+.view-tenth:hover .mask {
+  opacity: 1;
+}
+
+.view-tenth:hover h2,
+.view-tenth:hover p,
+.view-tenth:hover a.info {
+  transform: scale(1);
+  opacity: 1;
+}
+
 
 .container {
   padding-right: 15px;
@@ -276,4 +427,91 @@ body {
   .container {
     width: 1170px;
   }
+}
+.primary {
+  font-size: 2.5rem;
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 2rem;
+  transform: rotate(270deg);
+  cursor: pointer;
+}
+.secondary {
+  display: inline-block;
+  font-size: 3.7rem;
+  font-weight: 100;
+
+  & span {
+    color: $green_color;
+    font-weight: 500;
+  }
+}
+.icon {
+  &-blue,
+  &-green,
+  &-rose,
+  &-orange {
+    transition: all 0.5s ease;
+  }
+}
+.icon {
+  &-blue {
+    color: #008cba;
+  }
+  &-green {
+    color: $green_color;
+  }
+  &-rose {
+    color: #ce2350;
+  }
+  &-orange {
+    color: #e25111;
+  }
+}
+.overlay {
+  position: relative;
+}
+
+.overlay:before {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  display: block;
+  z-index: 0;
+  transition: all 1s ease;
+}
+
+.overlay:hover:before {
+  display: block;
+  height: 100%;
+}
+.overlay:hover {
+  .icon {
+    &-blue,
+    &-green,
+    &-rose,
+    &-orange {
+      color: $black_color;
+    }
+  }
+}
+
+.blue:before {
+  background-color: #008cba;
+}
+.green:before {
+  background-color: $green_color;
+}
+.rose:before {
+  background-color: #ce2350;
+}
+.orange:before {
+  background-color: #e25111;
+}
+.overlay * {
+  position: relative;
+  /* hack */
 }
