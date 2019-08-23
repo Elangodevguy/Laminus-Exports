@@ -97,7 +97,9 @@ body {
   height: 10%;
   display: flex;
   align-items: center;
-  margin: 1rem;
+  margin: 0 1rem;
+  padding: 1rem;
+  border-bottom: 2px solid $green_color;
 
   &__brand {
     flex: 1;
@@ -277,43 +279,44 @@ body {
 }
 
 .products {
-  margin: 0 1rem;
   padding: 6rem 0;
+  border-left: 1rem solid $green_color;
+  border-right: 1rem solid $green_color;
+  // background-image: linear-gradient(rgba($green_color, 0.7), rgba($green_color, 0.7)),
+  //   url(./img/strength.jpeg);
+  // background-position: top;
+  // background-size: cover;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
   &__top {
     &--primary {
       color: $brown_color;
     }
     &--secondary {
-
+      color: $black_color;
     }
-
   }
   &__bottom {
     margin: 5rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-
   }
 }
-
-// Sumaaaaaaa
 
 /* generic css */
 
 .view {
-  min-width: 31.333%;
-  border-radius: 1rem;
-  margin: 10px;
-  float: left;
-  border: 1rem solid $green_color;
+  width: 25%;
+  min-width: 30rem;
+  height: 35rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0rem;
   overflow: hidden;
   position: relative;
   text-align: center;
-  box-shadow: 1px 1px 2px #e6e6e6;
-  cursor: default;
-  background: #fff url(../images/bgimg.jpg) no-repeat center center;
+  box-shadow: 0.5rem 0.5rem 0.3rem rgba(0, 0, 0, 0.6);
 }
 
 .view .mask,
@@ -328,6 +331,7 @@ body {
 
 .view img {
   width: 100%;
+  height: 100%;
   display: block;
   position: relative;
 }
@@ -338,10 +342,10 @@ body {
   text-align: center;
   position: relative;
   font-size: 17px;
-  font-family: Raleway, serif;
-  padding: 10px;
+  // font-family: Raleway, serif;
+  padding: 1rem;
   /*background: rgba(0, 0, 0, 0.8);*/
-  margin: 20px 0 0 0;
+  margin: 2rem 0 0 0;
 }
 
 .view p {
@@ -349,7 +353,7 @@ body {
   font-size: 14px;
   position: relative;
   color: #fff;
-  padding: 0px 20px 0px;
+  padding: 1rem 2rem 0rem;
   text-align: center;
 }
 
@@ -357,11 +361,12 @@ body {
 
 .view-tenth img {
   transform: scaleY(1);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .view-tenth .mask {
-  background-color: rgba(255, 231, 179, 0.3);
+  // background-color: rgba(255, 231, 179, 0.3);\
+  background-color: $green_color;
   transition: all 0.5s linear;
   opacity: 0;
 }
@@ -371,13 +376,13 @@ body {
   background: transparent;
   margin: 20px 40px 0px 40px;
   transform: scale(0);
-  color: #333;
+  // color: #333;
   transition: all 0.5s linear;
   opacity: 0;
 }
 
 .view-tenth p {
-  color: #333;
+  // color: #333;
   opacity: 0;
   transform: scale(0);
   transition: all 0.5s linear;
@@ -394,7 +399,11 @@ body {
   transform: scale(10);
   opacity: 0;
 }
-
+// .view-tenth:hover{
+//   border: .2rem solid #ce2350;
+//   background-color: transparent;
+//   box-shadow: .5rem .5rem 0.3rem rgba(0, 0, 0, .6);
+// }
 .view-tenth:hover .mask {
   opacity: 1;
 }
@@ -406,6 +415,95 @@ body {
   opacity: 1;
 }
 
+// CONTACT FORM
+
+.contact {
+  background-color: #313840;
+  margin: 0 1rem;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__us {
+    &--heading {
+      font-size: 3.5rem;
+      font-weight: 100;
+      // color: rgba(255, 255, 255, 0.2);
+      color: #999;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    &--form {
+      text-align: center;
+      & input {
+        font-family: inherit;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 0.1rem solid #777;
+        font-size: 1.6rem;
+        padding: 1rem 0rem;
+        color: #eee;
+        transition: all 0.7s;
+
+        &::placeholder {
+          color: #999;
+        }
+        &:focus {
+          border-bottom: 0.2rem solid #777;
+        }
+      }
+    }
+    &--name {
+      margin-right: 2rem;
+    }
+    &--email {
+    }
+    &--message {
+      display: block;
+      width: 100%;
+      margin: 2rem 0 4rem 0;
+    }
+    .btn {
+      font-family: inherit;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #999;
+      font-size: 1.6rem;
+      padding: 1rem 3rem;
+      border: 0.1rem solid #777;
+      cursor: pointer;
+    }
+    .btn-dark {
+    }
+  }
+
+  &__social {
+    & * {
+      margin-bottom: 1.5rem;
+    }
+    &--icon {
+      font-size: 1.8rem;
+      color: #999;
+      text-decoration: none;
+      vertical-align: top;
+      
+
+      & i {
+        font-size: 3rem;
+        margin-right: 1.5rem;
+        transition: all .1s linear;
+      }
+    }
+  }
+  .contact__social--icon:hover {
+    & i {
+      color: $white_color;
+    }
+  }
+}
 
 .container {
   padding-right: 15px;
