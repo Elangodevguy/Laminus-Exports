@@ -145,8 +145,8 @@ body {
   // background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
   //   url(./img/header.jpg);
   background-image: linear-gradient(
-      rgba($green_color, 0.7),
-      rgba($green_color, 0.7)
+      rgba($green_color, 0.8),
+      rgba($green_color, 0.8)
     ),
     url(./img/header.jpg);
   background-position: top;
@@ -156,6 +156,29 @@ body {
 
   height: 100%;
   margin: 0 1rem;
+  position: relative;
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__heading {
+    font-size: 4rem;
+    font-weight: 400;
+    color: $black_color;
+    color: $white_color;
+    text-transform: capitalize;
+  }
+  &__para {
+    margin-top: 1rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    // color: $black_color;
+    color: $white_color;
+    text-transform: capitalize;
+  }
 }
 
 // Menu animation
@@ -399,8 +422,8 @@ body {
   transform: scale(10);
   opacity: 0;
 }
-.view-tenth:hover{
-  border: .2rem solid #aaa;
+.view-tenth:hover {
+  border: 0.2rem solid #aaa;
   // background-color: transparent;
   // box-shadow: .5rem .5rem 0.3rem rgba(0, 0, 0, .6);
 }
@@ -476,11 +499,11 @@ body {
       border: 0.1rem solid #777;
       cursor: pointer;
       border-radius: 0rem;
-      transition: all .3s linear;
-      &:hover{
+      transition: all 0.3s linear;
+      &:hover {
         background: $white_color;
         color: $black_color;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
       }
     }
     .btn-dark {
@@ -496,12 +519,11 @@ body {
       color: #999;
       text-decoration: none;
       vertical-align: top;
-      
 
       & i {
         font-size: 3rem;
         margin-right: 1.5rem;
-        transition: all .1s linear;
+        transition: all 0.1s linear;
       }
     }
   }
