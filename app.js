@@ -1,4 +1,4 @@
-import { CountUp } from 'countup.js';
+import { CountUp } from './countUp.js';
 
 let crossed = 0;
 window.addEventListener('scroll', function(e) {
