@@ -401,6 +401,10 @@ body {
   opacity: 0;
 }
 
+.view-tenth:hover {
+  border: .2rem solid #aaa;
+}
+
 .view-tenth:hover .mask {
   opacity: 1;
 }

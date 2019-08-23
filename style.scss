@@ -399,11 +399,11 @@ body {
   transform: scale(10);
   opacity: 0;
 }
-// .view-tenth:hover{
-//   border: .2rem solid #ce2350;
-//   background-color: transparent;
-//   box-shadow: .5rem .5rem 0.3rem rgba(0, 0, 0, .6);
-// }
+.view-tenth:hover{
+  border: .2rem solid #aaa;
+  // background-color: transparent;
+  // box-shadow: .5rem .5rem 0.3rem rgba(0, 0, 0, .6);
+}
 .view-tenth:hover .mask {
   opacity: 1;
 }
