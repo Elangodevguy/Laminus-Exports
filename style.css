@@ -496,6 +496,15 @@ body {
   padding: 1rem 3rem;
   border: 0.1rem solid #777;
   cursor: pointer;
+  border-radius: 0rem;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.contact__us .btn:hover {
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: .5rem;
 }
 
 .contact__social * {

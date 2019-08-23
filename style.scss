@@ -475,6 +475,13 @@ body {
       padding: 1rem 3rem;
       border: 0.1rem solid #777;
       cursor: pointer;
+      border-radius: 0rem;
+      transition: all .3s linear;
+      &:hover{
+        background: $white_color;
+        color: $black_color;
+        border-radius: .5rem;
+      }
     }
     .btn-dark {
     }
