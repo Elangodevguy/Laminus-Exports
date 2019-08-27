@@ -17,6 +17,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- qwerty -->
+    <div id="myNav" class="cover">
+      <a href="javascript:void(0)" class="closebtn">&times;</a>
+      <div class="cover-content">
+        <a href="#header">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- qwerty -->
+
     <nav id="navbar" class="navbar">
       <a href="/" class="navbar__brand">
         <img
@@ -31,10 +44,11 @@
       </a>
 
       <div class="navbar__list">
-        <a href="#" class="navbar__list--item menu__link">Home</a>
-        <a href="#" class="navbar__list--item menu__link">About</a>
-        <a href="#" class="navbar__list--item menu__link">Products</a>
-        <a href="#" class="navbar__list--item menu__link">Contact us</a>
+        <a href="#header" class="navbar__list--item menu__link">Home</a>
+        <a href="#about" class="navbar__list--item menu__link">About</a>
+        <a href="#products" class="navbar__list--item menu__link">Products</a>
+        <a href="#contact" class="navbar__list--item menu__link">Contact us</a>
+        <span class="mobile__nav"> &#9776; </span>
       </div>
     </nav>
     <div class="header__container">
@@ -42,18 +56,16 @@
       <header id="header" class="header">
         <div class="header__text">
           <h1 class="header__heading">
-            Make mother earth happy !
+            Make mother earth happy
           </h1>
           <p class="header__para">
             Use Biodegradable and ecofriendly dinnerware
           </p>
+          <a href="#products" class="btn btn-primary">View products</a>
         </div>
       </header>
     </div>
     <section class="about" id="about">
-      <!-- <div style="text-align: center;">
-        
-      </!-->
       <div class="container about__section">
         <div class="about__left">
           <h2 class="primary menu__link about__left--primary">About Us</h2>
@@ -129,57 +141,29 @@
             Products
           </h3>
         </div>
-        <div class="products__bottom">
-          <div class="view view-tenth">
-            <img src="./img/tear-drop-1.jpg" />
-            <div class="mask">
-              <h2>Tear drop shaped bowls</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
-          </div>
-          <div class="view view-tenth">
-            <img src="./img/square-plates-1.jpg" />
-            <div class="mask">
-              <h2>Square shaped plates</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
-          </div>
-
-          <div class="view view-tenth">
-            <img src="./img/round-plate-2.jpg" />
-            <div class="mask">
-              <h2>Round shaped plates</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
-          </div>
-
-          <div class="view view-tenth">
-            <img src="./img/square-bowls-2.png" />
-            <div class="mask">
-              <h2>Square shaped bowls</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
-          </div>
-
-          <div class="view view-tenth">
-            <img src="./img/round-plate-1.jpg" />
-            <div class="mask">
-              <h2>Round shaped plates</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
-          </div>
-
-          <div class="view view-tenth">
-            <img src="./img/single-plate-2.jpg" />
-            <div class="mask">
-              <h2>Rectangle shaped plates</h2>
-              <p>Available sizes: 2, 3, 4, 5</p>
-            </div>
+        <div class="products__middle">
+          <div class="products__middle--btn">
+            <button data-type="all" class="btn products__middle--all">
+              All
+            </button>
+            <button data-type="plates" class="btn products__middle--plates">
+              Plates
+            </button>
+            <button data-type="bowls" class="btn products__middle--bowls">
+              Bowls
+            </button>
+            <button data-type="square" class="btn products__middle--square">
+              Square
+            </button>
+            <button data-type="round" class="btn products__middle--round">
+              Round
+            </button>
           </div>
         </div>
+        <div class="products__bottom"></div>
       </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="contact__us">
         <h3 class="contact__us--heading">Get in touch with us</h3>
         <form action="" class="contact__us--form">
@@ -198,7 +182,7 @@
             type="text"
             placeholder="Your Message"
           />
-          <button type="submit" class="btn btn-dark">Get in touch</button>
+          <button type="submit" class="btn btn-light">Get in touch</button>
         </form>
       </div>
       <div class="contact__social">
@@ -236,7 +220,20 @@
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__nav">
+          <a href="#header" class="footer__nav--link">Home</a>
+          <a href="#about" class="footer__nav--link">About</a>
+          <a href="#products" class="footer__nav--link">Products</a>
+          <a href="#contact" class="footer__nav--link">Contact</a>
+        </div>
+        <div class="footer__copy">
+          All copyrights &copy; reserved by Laminus Exports
+        </div>
+      </div>
+    </footer>
     <script src="./countUp.js" type="module" defer></script>
-    <script src="./app.js" type="module" defer></script>
+    <script src="./app.js" type="module" defer type="text/javascript"></script>
   </body>
 </html>

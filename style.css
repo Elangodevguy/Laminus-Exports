@@ -21,7 +21,7 @@ html {
 
 @media only screen and (min-width: 112.5em) {
   html {
-    font-size: 75%;
+    font-size: 85%;
   }
 }
 
@@ -49,6 +49,18 @@ body {
           box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
   line-height: 1.6;
+}
+
+.mobile__nav {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile__nav {
+    display: block;
+  }
 }
 
 .header__container {
@@ -122,6 +134,15 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .navbar__list {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-right: 2rem;
+  }
+}
+
 .navbar__list--item {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87);
@@ -129,6 +150,12 @@ body {
   margin-right: 2rem;
   color: rgba(0, 0, 0, 0.87);
   font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar__list--item {
+    display: none;
+  }
 }
 
 .header {
@@ -141,6 +168,7 @@ body {
   height: 100%;
   margin: 0 1rem;
   position: relative;
+  cursor: pointer;
 }
 
 .header__text {
@@ -165,6 +193,15 @@ body {
   font-weight: 400;
   color: white;
   text-transform: capitalize;
+}
+
+.header:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(./img/strength.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./img/strength.jpeg);
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .menu__link {
@@ -221,10 +258,23 @@ body {
   padding: 6rem 0;
 }
 
+@media only screen and (max-width: 993px) {
+  .about__section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .about__left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin-right: 3rem;
+}
+
+@media only screen and (max-width: 993px) {
+  .about__left {
+    margin-bottom: 4rem;
+  }
 }
 
 .about__left--primary {
@@ -247,7 +297,7 @@ body {
 
 .facts {
   margin: 0 1rem;
-  padding: 6rem 0;
+  padding: 6rem 0 2rem 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(./img/strength.jpeg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./img/strength.jpeg);
   background-position: top;
@@ -291,9 +341,21 @@ body {
   padding-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 450px) {
+  .facts__bottom--card i {
+    font-size: 3rem;
+  }
+}
+
 .facts__bottom--card .card__details--num {
   font-size: 3rem;
   padding-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .facts__bottom--card .card__details--num {
+    font-size: 2rem;
+  }
 }
 
 .facts__bottom--card .card__details--text {
@@ -302,7 +364,7 @@ body {
 }
 
 .products {
-  padding: 6rem 0;
+  padding: 6rem 0 1rem 0;
   border-left: 1rem solid #63cd2b;
   border-right: 1rem solid #63cd2b;
 }
@@ -315,8 +377,28 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
+.products__middle {
+  margin: 3rem 0 0 4.5rem;
+}
+
+.products__middle--btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: scroll;
+}
+
+.products__middle--btn::-webkit-scrollbar {
+  height: 0px;
+  background: transparent;
+}
+
+.products__middle button:not(:last-child) {
+  margin-right: 1rem;
+}
+
 .products__bottom {
-  margin: 5rem 0;
+  margin: 4rem 0 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,6 +427,8 @@ body {
 
 .view .mask,
 .view .content {
+  width: 100%;
+  height: 100%;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -456,6 +540,27 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .contact {
+    padding: 4rem 0 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__us {
+    margin-bottom: 4rem;
+  }
+}
+
 .contact__us--heading {
   font-size: 3.5rem;
   font-weight: 100;
@@ -505,31 +610,25 @@ body {
   margin-right: 2rem;
 }
 
+@media only screen and (max-width: 400px) {
+  .contact__us--name {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contact__us--email {
+    display: block;
+    width: 100%;
+  }
+}
+
 .contact__us--message {
   display: block;
   width: 100%;
   margin: 2rem 0 4rem 0;
-}
-
-.contact__us .btn {
-  font-family: inherit;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #999;
-  font-size: 1.6rem;
-  padding: 1rem 3rem;
-  border: 0.1rem solid #777;
-  cursor: pointer;
-  border-radius: 0rem;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.contact__us .btn:hover {
-  background: white;
-  color: rgba(0, 0, 0, 0.87);
-  border-radius: 0.5rem;
 }
 
 .contact__social * {
@@ -551,6 +650,39 @@ body {
 }
 
 .contact .contact__social--icon:hover i {
+  color: white;
+}
+
+.footer {
+  margin: 0 1rem;
+  padding: 3rem 0;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__nav--link {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.footer__nav--link:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.footer__copy {
+  font-size: 1.6rem;
   color: white;
 }
 
@@ -579,6 +711,12 @@ body {
   }
 }
 
+@media (min-width: 1800px) {
+  .container {
+    width: 1600px;
+  }
+}
+
 .primary {
   font-size: 2.5rem;
   font-weight: 400;
@@ -589,10 +727,22 @@ body {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 450px) {
+  .primary {
+    font-size: 1.6rem;
+  }
+}
+
 .secondary {
   display: inline-block;
   font-size: 3.7rem;
   font-weight: 100;
+}
+
+@media only screen and (max-width: 450px) {
+  .secondary {
+    font-size: 2.2rem;
+  }
 }
 
 .secondary span {
@@ -666,5 +816,102 @@ body {
 .overlay * {
   position: relative;
   /* hack */
+}
+
+.btn {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #999;
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  border: 0.1rem solid #777;
+  cursor: pointer;
+  border-radius: 0rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.btn-active {
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.btn-light:hover {
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.5rem;
+}
+
+.btn-primary {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-top: 1.7rem;
+  color: white;
+  border: 0.1rem solid white;
+}
+
+.btn-primary:hover {
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.cover {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.cover-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.cover a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.cover a:hover {
+  color: #f1f1f1;
+}
+
+.cover .closebtn {
+  position: absolute;
+  top: 2rem;
+  right: 4.5rem;
+  font-size: 6rem;
+}
+
+@media screen and (max-height: 450px) {
+  .cover {
+    overflow-y: auto;
+  }
+  .cover a {
+    font-size: 2rem;
+  }
+  .cover .closebtn {
+    font-size: 4rem;
+    top: 1.5rem;
+    right: 4rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

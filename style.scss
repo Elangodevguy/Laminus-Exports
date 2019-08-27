@@ -62,7 +62,7 @@ html {
 
   // To include Mixins
   @include respond(big-desktop) {
-    font-size: 75%;
+    font-size: 85%;
   }
 
   @include respond(tab-land) {
@@ -84,6 +84,15 @@ body {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.6;
   // padding: 3rem;
+}
+.mobile__nav {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
 }
 .header__container {
   position: relative;
@@ -130,6 +139,11 @@ body {
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: 600px) {
+      justify-content: flex-end;
+      margin-right: 2rem;
+    }
+
     &--item {
       text-decoration: none;
       color: $black_color;
@@ -137,6 +151,10 @@ body {
       margin-right: 2rem;
       color: $black_color;
       font-weight: 500;
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
     }
   }
 }
@@ -157,6 +175,7 @@ body {
   height: 100%;
   margin: 0 1rem;
   position: relative;
+  cursor: pointer;
   &__text {
     position: absolute;
     top: 50%;
@@ -178,6 +197,17 @@ body {
     // color: $black_color;
     color: $white_color;
     text-transform: capitalize;
+  }
+  &:hover {
+    // background: #63cd2b;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(./img/strength.jpeg);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    // display:inline-block;
+    // transition: all 0.5s ease-in;
   }
 }
 
@@ -228,9 +258,16 @@ body {
     display: flex;
     align-items: center;
     padding: 6rem 0;
+    @media only screen and (max-width: 993px) {
+      flex-direction: column;
+    }
   }
   &__left {
-    flex: 1;
+    // flex: 1;
+    margin-right: 3rem;
+    @media only screen and (max-width: 993px) {
+      margin-bottom: 4rem;
+    }
 
     &--primary {
       color: $brown_color;
@@ -252,7 +289,7 @@ body {
 
 .facts {
   margin: 0 1rem;
-  padding: 6rem 0;
+  padding: 6rem 0 2rem 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./img/strength.jpeg);
   background-position: top;
@@ -285,12 +322,18 @@ body {
       & i {
         font-size: 4rem;
         padding-bottom: 1.5rem;
+        @media only screen and (max-width: 450px) {
+          font-size: 3rem;
+        }
       }
 
       .card__details {
         &--num {
           font-size: 3rem;
           padding-bottom: 0.5rem;
+          @media only screen and (max-width: 450px) {
+            font-size: 2rem;
+          }
         }
         &--text {
           font-size: 1.6rem;
@@ -302,15 +345,10 @@ body {
 }
 
 .products {
-  padding: 6rem 0;
+  padding: 6rem 0 1rem 0;
   border-left: 1rem solid $green_color;
   border-right: 1rem solid $green_color;
-  // background-image: linear-gradient(rgba($green_color, 0.7), rgba($green_color, 0.7)),
-  //   url(./img/strength.jpeg);
-  // background-position: top;
-  // background-size: cover;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
+
   &__top {
     &--primary {
       color: $brown_color;
@@ -319,8 +357,24 @@ body {
       color: $black_color;
     }
   }
+  &__middle {
+    margin: 3rem 0 0 4.5rem;
+
+    &--btn {
+      display: flex;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        height: 0px;
+        background: transparent;
+      }
+    }
+
+    & button:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
   &__bottom {
-    margin: 5rem 0;
+    margin: 4rem 0 5rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -346,6 +400,8 @@ body {
 .view .content {
   // width: 300px;
   // height: 200px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -444,11 +500,20 @@ body {
   background-color: #313840;
   margin: 0 1rem;
   padding: 4rem 0;
+  @media only screen and (max-width: 600px) {
+    padding: 4rem 0 1rem 0;
+  }
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 
   &__us {
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 4rem;
+    }
     &--heading {
       font-size: 3.5rem;
       font-weight: 100;
@@ -480,33 +545,22 @@ body {
     }
     &--name {
       margin-right: 2rem;
+      @media only screen and (max-width: 400px) {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
     }
     &--email {
+      @media only screen and (max-width: 400px) {
+        display: block;
+        width: 100%;
+      }
     }
     &--message {
       display: block;
       width: 100%;
       margin: 2rem 0 4rem 0;
-    }
-    .btn {
-      font-family: inherit;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: #999;
-      font-size: 1.6rem;
-      padding: 1rem 3rem;
-      border: 0.1rem solid #777;
-      cursor: pointer;
-      border-radius: 0rem;
-      transition: all 0.3s linear;
-      &:hover {
-        background: $white_color;
-        color: $black_color;
-        border-radius: 0.5rem;
-      }
-    }
-    .btn-dark {
     }
   }
 
@@ -534,6 +588,33 @@ body {
   }
 }
 
+// Footer
+.footer {
+  margin: 0 1rem;
+  padding: 3rem 0;
+  background-color: $black_color;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav {
+    &--link {
+      text-decoration: none;
+      font-size: 1.6rem;
+      color: $white_color;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+  &__copy {
+    font-size: 1.6rem;
+    color: $white_color;
+  }
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -555,6 +636,11 @@ body {
     width: 1170px;
   }
 }
+@media (min-width: 1800px) {
+  .container {
+    width: 1600px;
+  }
+}
 .primary {
   font-size: 2.5rem;
   font-weight: 400;
@@ -562,11 +648,17 @@ body {
   margin-bottom: 2rem;
   transform: rotate(270deg);
   cursor: pointer;
+  @media only screen and (max-width: 450px) {
+    font-size: 1.6rem;
+  }
 }
 .secondary {
   display: inline-block;
   font-size: 3.7rem;
   font-weight: 100;
+  @media only screen and (max-width: 450px) {
+    font-size: 2.2rem;
+  }
 
   & span {
     color: $green_color;
@@ -641,4 +733,96 @@ body {
 .overlay * {
   position: relative;
   /* hack */
+}
+
+.btn {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #999;
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  border: 0.1rem solid #777;
+  cursor: pointer;
+  border-radius: 0rem;
+  transition: all 0.3s linear;
+}
+.btn-active {
+  background-color: #eee;
+  color: $black_color;
+}
+.btn-light:hover {
+  background: $white_color;
+  color: $black_color;
+  border-radius: 0.5rem;
+}
+.btn-primary {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-top: 1.7rem;
+  color: $white_color;
+  border: 0.1rem solid $white_color;
+
+  &:hover{
+    background-color: #eee;
+    color: $black_color;
+  }
+}
+
+// MOBILE NAV
+.cover {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.cover-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.cover a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.cover a:hover {
+  color: #f1f1f1;
+}
+
+.cover .closebtn {
+  position: absolute;
+  top: 2rem;
+  right: 4.5rem;
+  font-size: 6rem;
+}
+
+@media screen and (max-height: 450px) {
+  .cover {
+    overflow-y: auto;
+  }
+  .cover a {
+    font-size: 2rem;
+  }
+  .cover .closebtn {
+    font-size: 4rem;
+    top: 1.5rem;
+    right: 4rem;
+  }
 }
