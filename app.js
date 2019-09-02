@@ -1,16 +1,16 @@
 import { CountUp } from './countUp.js';
 // openNav();
-document.querySelector('.mobile__nav').addEventListener('click',openNav);
-document.querySelector('.closebtn').addEventListener('click',closeNav);
+document.querySelector('.mobile__nav').addEventListener('click', openNav);
+document.querySelector('.closebtn').addEventListener('click', closeNav);
 document.querySelector('.cover').addEventListener('click', closeNav);
 /* Open */
 function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+  document.getElementById('myNav').style.height = '100%';
 }
 
 /* Close */
 function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+  document.getElementById('myNav').style.height = '0%';
 }
 
 let crossed = 0;
@@ -40,43 +40,113 @@ window.addEventListener('scroll', function(e) {
 const products_bottom = document.querySelector('.products__bottom');
 const all = [
   {
-    name: 'Tear drop shaped bowls',
-    img: './img/tear-drop-1.jpg',
-    sizes: '2, 3, 4, 5',
-    type: 'bowl',
-    shape: 'square'
-  },
-  {
-    name: 'Square shaped plates',
-    img: './img/square-plates-1.jpg',
-    sizes: '2, 3, 4, 5',
-    type: 'plate',
-    shape: 'square'
-  },
-  {
-    name: 'Round shaped plates',
-    img: './img/round-plate-2.jpg',
+    name: 'All round shaped plates',
+    img: './compressed/round_plates_all-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
     shape: 'round'
   },
   {
-    name: 'Square shaped bowls',
-    img: './img/square-bowls-2.png',
+    name: 'All square shaped plates',
+    img: './compressed/square_plates_all_1-min.jpg',
     sizes: '2, 3, 4, 5',
-    type: 'bowl',
+    type: 'plate',
     shape: 'square'
   },
   {
-    name: 'Round shaped plates',
-    img: './img/round-plate-1.jpg',
+    name: 'All square shaped plates',
+    img: './compressed/square_plates_all_2-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'square'
+  },
+  // {
+  //   name: 'All square shaped plates',
+  //   img: './compressed/square_plates_all_3-min.jpg',
+  //   sizes: '2, 3, 4, 5',
+  //   type: 'plate',
+  //   shape: 'square'
+  // },
+  {
+    name: 'Round shaped bowl',
+    img: './compressed/bowl_round_1-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'bowl',
+    shape: 'round'
+  },
+  {
+    name: 'Round shaped bowl',
+    img: './compressed/bowl_round_2-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'bowl',
+    shape: 'round'
+  },
+  {
+    name: 'Round shaped bowl',
+    img: './compressed/bowl_round_3-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'bowl',
+    shape: 'round'
+  },
+  {
+    name: 'Round shaped Plate',
+    img: './compressed/round_plate_1-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
     shape: 'round'
   },
   {
-    name: 'Rectangle shaped plates',
-    img: './img/single-plate-2.jpg',
+    name: 'Round shaped Plate',
+    img: './compressed/round_plate_2-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'round'
+  },
+  {
+    name: 'Round shaped Plate',
+    img: './compressed/round_plate_3-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'round'
+  },
+  {
+    name: 'Round shaped Plate',
+    img: './compressed/round_plate_4-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'round'
+  },
+  {
+    name: 'Square shaped bowl',
+    img: './compressed/square_bowl_1-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'bowl',
+    shape: 'square'
+  },
+  {
+    name: 'Square shaped plate',
+    img: './compressed/square_plate_1-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'square'
+  },
+  {
+    name: 'Square shaped plate',
+    img: './compressed/square_plate_2-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'square'
+  },
+  {
+    name: 'Square shaped plate',
+    img: './compressed/square_plate_3-min.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'plate',
+    shape: 'square'
+  },
+  {
+    name: 'Square shaped plate',
+    img: './compressed/square_plate_4-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
     shape: 'square'
@@ -112,7 +182,6 @@ showImages(all);
 document
   .querySelector('.products__middle--btn')
   .addEventListener('click', e => {
-
     let selected = e.target.dataset.type;
     if (selected) {
       removeActive();
