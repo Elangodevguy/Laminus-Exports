@@ -199,15 +199,20 @@ body {
     text-transform: capitalize;
   }
   &:hover {
-    // background: #63cd2b;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url(./img/strength.jpeg);
-    background-position: top;
+    background: #63cd2b;
+    background-image: url(./compressed/front_slide.jpg);
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     // display:inline-block;
     // transition: all 0.5s ease-in;
+    // & .header__heading,.header__para,.header a {
+    //   display: none;
+    // }
+    & .header__text {
+      display: none;
+    }
   }
 }
 
@@ -408,7 +413,7 @@ body {
   left: 0;
 }
 
-.view img {
+.view .hovering_image {
   width: 100%;
   height: 100%;
   display: block;
@@ -438,7 +443,7 @@ body {
 
 /*3*/
 
-.view-tenth img {
+.view-tenth .hovering_image {
   transform: scaleY(1);
   transition: all 0.8s ease-in-out;
 }
@@ -446,6 +451,16 @@ body {
 .view-tenth .mask {
   // background-color: rgba(255, 231, 179, 0.3);\
   background-color: $green_color;
+  transition: all 0.5s linear;
+  opacity: 0;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.view-tenth .mask-1 {
+  // background-color: rgba(255, 231, 179, 0.3);\
+  background-color: none;
   transition: all 0.5s linear;
   opacity: 0;
 }
@@ -473,15 +488,13 @@ body {
   transition: all 0.5s linear;
 }
 
-.view-tenth:hover img {
+.view-tenth:hover .hovering_image {
   -webkit-transform: scale(10);
   transform: scale(10);
   opacity: 0;
 }
 .view-tenth:hover {
   border: 0.2rem solid #aaa;
-  // background-color: transparent;
-  // box-shadow: .5rem .5rem 0.3rem rgba(0, 0, 0, .6);
 }
 .view-tenth:hover .mask {
   opacity: 1;

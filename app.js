@@ -40,116 +40,120 @@ window.addEventListener('scroll', function(e) {
 const products_bottom = document.querySelector('.products__bottom');
 const all = [
   {
-    name: 'All round shaped plates',
-    img: './compressed/round_plates_all-min.jpg',
-    sizes: '2, 3, 4, 5',
-    type: 'plate',
-    shape: 'round'
-  },
-  {
-    name: 'All square shaped plates',
-    img: './compressed/square_plates_all_1-min.jpg',
-    sizes: '2, 3, 4, 5',
-    type: 'plate',
-    shape: 'square'
-  },
-  {
-    name: 'All square shaped plates',
-    img: './compressed/square_plates_all_2-min.jpg',
-    sizes: '2, 3, 4, 5',
-    type: 'plate',
-    shape: 'square'
-  },
-  // {
-  //   name: 'All square shaped plates',
-  //   img: './compressed/square_plates_all_3-min.jpg',
-  //   sizes: '2, 3, 4, 5',
-  //   type: 'plate',
-  //   shape: 'square'
-  // },
-  {
     name: 'Round shaped bowl',
-    img: './compressed/bowl_round_1-min.jpg',
+    img: './compressed/round/bowl_round_1-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'bowl',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-1.jpg'
   },
   {
     name: 'Round shaped bowl',
-    img: './compressed/bowl_round_2-min.jpg',
+    img: './compressed/round/bowl_round_2-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'bowl',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-2.jpg'
   },
   {
     name: 'Round shaped bowl',
-    img: './compressed/bowl_round_3-min.jpg',
+    img: './compressed/round/bowl_round_3-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'bowl',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-3.jpeg'
   },
   {
     name: 'Round shaped Plate',
-    img: './compressed/round_plate_1-min.jpg',
+    img: './compressed/round/round_plate_1-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-4.png'
   },
   {
     name: 'Round shaped Plate',
-    img: './compressed/round_plate_2-min.jpg',
+    img: './compressed/round/round_plate_2-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-5.jpg'
   },
   {
     name: 'Round shaped Plate',
-    img: './compressed/round_plate_3-min.jpg',
+    img: './compressed/round/round_plate_3-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-6.jpg'
   },
   {
     name: 'Round shaped Plate',
-    img: './compressed/round_plate_4-min.jpg',
+    img: './compressed/round/round_plate_4-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'round'
+    shape: 'round',
+    another_img: './compressed/round/round-7.jpg'
   },
   {
     name: 'Square shaped bowl',
-    img: './compressed/square_bowl_1-min.jpg',
+    img: './compressed/square/square_bowl_1-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'bowl',
-    shape: 'square'
+    shape: 'square',
+    another_img: './compressed/square/square-1.jpg'
   },
   {
     name: 'Square shaped plate',
-    img: './compressed/square_plate_1-min.jpg',
+    img: './compressed/square/square_plate_1-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'square'
+    shape: 'square',
+    another_img: './compressed/square/square-2.jpg'
   },
   {
     name: 'Square shaped plate',
-    img: './compressed/square_plate_2-min.jpg',
+    img: './compressed/square/square_plate_2-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
-    shape: 'square'
+    shape: 'square',
+    another_img: './compressed/square/square-3.jpg'
   },
   {
     name: 'Square shaped plate',
-    img: './compressed/square_plate_3-min.jpg',
+    img: './compressed/square/square_plate_4-min.jpg',
     sizes: '2, 3, 4, 5',
     type: 'plate',
+    shape: 'square',
+    another_img: './compressed/square/square-4.jpg'
+  },
+  {
+    name: 'Rectangle shaped bowl',
+    img: './compressed/rectangle/rectangle_plate.jpg',
+    sizes: '2, 3, 4, 5',
+    type: 'bowl',
+    shape: 'rectangle',
+    another_img: './compressed/rectangle/rectangle-1.jpg'
+  }
+];
+const allTypes = [
+  {
+    name: 'Round',
+    img: './compressed/round/round_plates_all-min.jpg',
+    sizes: '2, 3, 4, 5',
+    shape: 'round'
+  },
+  {
+    name: 'Square',
+    img: './compressed/square/square_plates_all_1-min.jpg',
+    sizes: '2, 3, 4, 5',
     shape: 'square'
   },
   {
-    name: 'Square shaped plate',
-    img: './compressed/square_plate_4-min.jpg',
+    name: 'Rectangle',
+    img: './compressed/rectangle/rectangle_plate.jpg',
     sizes: '2, 3, 4, 5',
-    type: 'plate',
-    shape: 'square'
+    shape: 'rectangle'
   }
 ];
 document.querySelector('.products__middle--all').classList.add('btn-active');
@@ -158,14 +162,23 @@ function showImages(arr) {
 
   let html = '';
   arr.forEach(element => {
-    let newHtml = `<div class="view view-tenth">
-            <img src="${element.img}" />
+    let newHtml;
+    if (element.hasOwnProperty('type')) {
+      newHtml = `<div class="view view-tenth">
+            <img class="hovering_image" src="${element.img}" />
+            <div class="mask mask-1">
+              <img src="${element.another_img}">
+            </div>
+          </div>`;
+    } else {
+      newHtml = `<div class="view view-tenth">
+            <img class="hovering_image" src="${element.img}" />
             <div class="mask">
               <h2>${element.name}</h2>
               <p>Available sizes: ${element.sizes}</p>
             </div>
           </div>`;
-
+    }
     html += newHtml;
   });
   products_bottom.insertAdjacentHTML('beforeend', html);
@@ -177,7 +190,7 @@ function removeActive() {
     .forEach(el => el.classList.remove('btn-active'));
 }
 
-showImages(all);
+showImages(allTypes);
 
 document
   .querySelector('.products__middle--btn')
@@ -209,9 +222,14 @@ document
             arr.push(el);
           }
         }
+        if (selected === 'rectangle') {
+          if (el.shape === 'rectangle') {
+            arr.push(el);
+          }
+        }
       });
       if (selected === 'all') {
-        showImages(all);
+        showImages(allTypes);
       } else {
         showImages(arr);
       }
